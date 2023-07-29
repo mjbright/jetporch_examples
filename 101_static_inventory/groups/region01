@@ -1,0 +1,4 @@
+# adds two subgroups under group 'region01'
+
+- group: webservers
+- group: dbservers
