@@ -1,3 +1,4 @@
-- host: www01
-- host: www02
+hosts:
+ - www01
+ - www02
  
