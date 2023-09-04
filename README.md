@@ -49,6 +49,18 @@ Invoke Local Mode
 
 From a Enterprise Linux or Debian/Ubuntu host, run "sudo make redis_local".  Other OS types may be added to this example later.
 
+Experimentation
+===============
+
+The following steps may help users new to configuration managemnet systems understand Jet.  For users coming from other tools, they may help familiarize
+you with Jet output.
+
+1. Edit the template (maybe add a comment line) and rerun the playbook.  Notice that the service restarts.
+2. Change the port in role parameters or the role defaults, notice that the role parameter overrides the default.
+3. Remove the role parameter for the port from the main playbook file. notice that the role parameter default now takes over.
+4. Manually stop the service by logging in to the remote machine and running systemctl. Re-run the playbook. Notice that the only change made is to start the service.
+5. On the remote system, delete /etc/redis/redis.conf. Re-run the playbook and notice that it gets put back.
+   
 Questions/Help?
 ===============
 
@@ -57,4 +69,5 @@ No problem! See discord chat, documentation, and community info on https://www.j
 License
 =======
 
-this example repo is public domain
+This example repo is public domain.  Jet is a GPLv3 licensed program.
+
