@@ -18,9 +18,8 @@ Inventory Setup
 For SSH push mode, first you will need to set up inventory. You can skip this if you are going to run the
 playbook locally.
 
-1. copy the inventory directory to ~/private_inventory
-2. pick what group you want to configure from your inventory editing 'groups' in playbooks/redis.yml
-3. In cloud-based cases, you would probably want to use a cloud inventory source.  This is explained in the web page
+1. copy the inventory directory to ~/private_inventory and add some addresses of machines you own by editing groups/redis
+2. In cloud-based cases, you would probably want to use a cloud inventory source.  This is explained in the web page
 documentation, lets do this by hostname or IP address for now.
 
 SSH Keys
@@ -29,25 +28,29 @@ SSH Keys
 If attempting to run over SSH, we'll also need to let Jet know about your SSH keys:
 
 1. run "ssh-agent bash" to start an ssh-agent session if you don't already have one going
-2. run "ssh-agent add ~/.ssh/id_rsa" or add another SSH key you can use to connect to your systems
+2. run "ssh-agent add ~/.ssh/id_rsa" or add another SSH key you can use to connect to your systems you defined above
 
 It's about time to run Jet
 ==========================
 
-1. make sure the target/release directory from building 'jetp' is in your path.  
-2. for SSH modes, if you need to connect to another user than your current local username, export JET_SSH_USER=username, or set --user on the command line.
-3. for SSSH modes, if the desired login username on the remote machine is not root (good!), uncomment the sudo line in the playbook or add --sudo root to the command line.
+1. make sure the target/release directory from building 'jetp' is in your $PATH.  
+2. for SSH modes, if you need to connect to another remote account than that of your current local system username, export JET_SSH_USER=username, or remember to add --user to the command line below later.
+3. also for SSH modes, if the desired login username from the previous step is not root, uncomment the sudo line in the playbook or add --sudo root to the command line below later.
 
 Invoke SSH mode
 ===============
 
-Run "make redis_ssh_demo" or look at the Makefile to see the jet command line you need.
-You can run this from any Linux, Unix, or Mac machine.
+Run "make redis_ssh_demo" or take the command line therein and run it directly.  Add --user username or --sudo sudouser as needed, as instructed above.
+You can run jetp from any Linux, Unix, or Mac machine.
+
+The default configuration for Jet will use 20 threads for parallel configuration, but you can easily run 100 or more.  
+There are more capabilities to explore in the jet online documentation.
 
 Invoke Local Mode
 =================
 
 From a Enterprise Linux or Debian/Ubuntu host, run "sudo make redis_local".  Other OS types may be added to this example later.
+None of the SSH instructions need to be followed.
 
 Experimentation
 ===============
