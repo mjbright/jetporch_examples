@@ -14,7 +14,7 @@
 - !apt
   package: redis
   with:
-    cond (eq jet_os_release_platform_like "debian")
+    cond: (eq jet_os_release_platform_like "debian")
 
 - template
   src: redis.conf.hb
