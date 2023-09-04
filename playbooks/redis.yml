@@ -12,5 +12,5 @@
   tasks:
     
     - !echo
-    msg: "ready to go!"
+      msg: "ready to go!"
 
