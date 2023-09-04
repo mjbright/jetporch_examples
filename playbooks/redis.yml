@@ -1,0 +1,16 @@
+# demo of configuring Redis with Jet roles
+# https://www.jetporch.com/
+
+- groups:
+    - all
+
+  #sudo: root 
+  
+  roles:
+    - { role: redis, vars: { redis_port: 5000 } }
+
+  tasks:
+    
+    - !echo
+    msg: "ready to go!"
+

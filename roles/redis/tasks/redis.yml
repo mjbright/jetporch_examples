@@ -1,0 +1,34 @@
+# task file for redis role
+
+- !facts
+  {}
+
+- !echo
+  msg: "OS release detected={{ jet_os_release_platform_like }}"
+
+- !dnf
+  package: redis
+  with:
+    cond: (eq jet_os_release_platform_like "rhel fedora centos")
+
+- !apt
+  package: redis
+  with:
+    cond (eq jet_os_release_platform_like "debian")
+
+- template
+  src: redis.conf.hb
+  dest: /etc/redis/redis.conf
+  attributes:
+     owner: redis
+     group: redis
+     mode: 0o640
+  and:
+     notify: restart redis
+
+- !dnf
+  service: redis
+  started: true
+  enabled: true
+
+ 
