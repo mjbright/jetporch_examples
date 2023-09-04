@@ -3,14 +3,14 @@ Jetporch Example Content
 
 This repo contains demo automatiom content for learning, exploration, and testing Jet!
 
-role demos
+Role demos
 ==========
 
 Our first demo sets up redis as an example application.  It does not
 demo all language features but gives a strong overview of the basics so you can
 get a feel for how things work.
 
-Take a look at the files and then we'll show you how to run the example.
+Take a look at the files in the repo and then we'll show you how to run the example.
 
 Inventory Setup
 ===============
