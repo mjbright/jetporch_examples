@@ -16,7 +16,7 @@
   with:
     cond: (eq jet_os_release_platform_like "debian")
 
-- template
+- !template
   src: redis.conf.hb
   dest: /etc/redis/redis.conf
   attributes:
