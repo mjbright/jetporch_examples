@@ -1,7 +1,7 @@
 Jetporch Example Content
 ========================
 
-This repo contains demo automatiom content for learning, exploration, and testing Jet!
+This repo contains demo automation content for learning, exploration, and testing Jet!
 
 Role demos
 ==========
@@ -44,7 +44,7 @@ Run "make redis_ssh_demo" or take the command line therein and run it directly. 
 You can run jetp from any Linux, Unix, or Mac machine.
 
 The default configuration for Jet will use 20 threads for parallel configuration, but you can easily run 100 or more.  
-There are more capabilities to explore in the jet online documentation.
+There are more capabilities to explore in the jet online documentation (see https://www.jetporch.com)
 
 Invoke Local Mode
 =================
