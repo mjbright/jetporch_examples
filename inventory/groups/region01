@@ -2,4 +2,4 @@
 
 subgroups:
    - webservers
-   - dbservers
+   - redis
