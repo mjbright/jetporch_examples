@@ -26,7 +26,7 @@
   and:
      notify: restart redis
 
-- !dnf
+- !sd_service
   service: redis
   started: true
   enabled: true

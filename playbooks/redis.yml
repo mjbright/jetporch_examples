@@ -1,7 +1,8 @@
 # demo of configuring Redis with Jet roles
 # https://www.jetporch.com/
 
-- groups:
+- name: a test
+  groups:
     - all
 
   #sudo: root 
