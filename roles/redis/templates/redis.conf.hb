@@ -1,3 +1,6 @@
+# this is a handlebars template
+# see https://www.jetporch.com/playbooks/using-variables
+
 bind 127.0.0.1 ::1
 port {{ redis_port }}
 protected-mode yes
