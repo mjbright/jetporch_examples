@@ -1,7 +1,7 @@
 # handlers file for redis role
 
 - !sd_service
-  name: redis
+  service: redis
   restart: true
   with:
      subscribe: restart redis

@@ -4,17 +4,17 @@
   {}
 
 - !echo
-  msg: "OS release detected={{ jet_os_release_platform_like }}"
+  msg: "OS release detected={{ jet_os_release_id_like }}"
 
 - !dnf
   package: redis
   with:
-    cond: (eq jet_os_release_platform_like "rhel fedora centos")
+    cond: (eq jet_os_release_id_like "rhel fedora centos")
 
 - !apt
   package: redis
   with:
-    cond: (eq jet_os_release_platform_like "debian")
+    cond: (eq jet_os_release_id_like "debian")
 
 - !template
   src: redis.conf.hb
