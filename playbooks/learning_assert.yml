@@ -10,7 +10,6 @@
   tasks:
 
    - !facts
-     {}
 
    - !assert
      name: test1
