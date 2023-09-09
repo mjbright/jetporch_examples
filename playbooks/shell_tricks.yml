@@ -1,4 +1,3 @@
-
 - name: shell tricks
   groups: 
     - all
@@ -15,10 +14,10 @@
   tasks:
 
   - !shell
-     cmd: grep -i "chickens" /etc/motd
-     failed_when: (gt rc 1)
-     and:
-         save: grep_result
+    cmd: grep -i "chickens" /etc/motd
+    failed_when: (gt rc 1)
+    and:
+       save: grep_result
      
   - !echo
     msg: "grep result was {{ grep_result.rc }}"   
@@ -31,6 +30,5 @@
   - !echo
     msg: "the motd did not mention chickens"
     with:
-        cond: (eq grep_result.rc 1)
-
+        cond: (eq grep_result.rc 1) 
         
