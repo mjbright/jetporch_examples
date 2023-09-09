@@ -1,0 +1,36 @@
+
+- name: shell tricks
+  groups: 
+    - all
+
+  # try running this playbook with a host that has the word 'chickens' in the /etc/motd file
+  # remove the reference and re-run the playbook again
+  # how does it change?
+
+  # change the failure conditions (failed_when) for the first task:
+  # (eq rc 0)  --- fail when chickens are found in the motd
+  # (eq rc 1)  --- fail when chickens are not found in the motd
+  # (gt rc 1)  --- fail when the motd is not found or not readable
+
+  tasks:
+
+  - !shell
+     cmd: grep -i "chickens" /etc/motd
+     failed_when: (gt rc 1)
+     and:
+         save: grep_result
+     
+  - !echo
+    msg: "grep result was {{ grep_result.rc }}"   
+     
+  - !echo
+    msg: "the motd mentioned chickens"
+    with:
+        cond: (eq grep_result.rc 0)
+        
+  - !echo
+    msg: "the motd did not mention chickens"
+    with:
+        cond: (eq grep_result.rc 1)
+
+        
