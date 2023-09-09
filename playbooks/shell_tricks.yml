@@ -11,7 +11,7 @@
 
   - !shell
     name: see if the motd file contains chickens
-    cmd: grep -i "chickens" /etc/motd
+    cmd: "grep -i 'chickens' {{ motd }}"
     failed_when: (gt rc 1)
     changed_when: false
     save: grep_result
