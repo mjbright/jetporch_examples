@@ -16,8 +16,7 @@
   - !shell
     cmd: grep -i "chickens" /etc/motd
     failed_when: (gt rc 1)
-    and:
-       save: grep_result
+    save: grep_result
      
   - !echo
     msg: "grep result was {{ grep_result.rc }}"   
