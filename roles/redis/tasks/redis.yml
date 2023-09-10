@@ -9,12 +9,12 @@
 - !dnf
   package: redis
   with:
-    cond: (eq jet_distro_flavor "EL")
+    condition: (eq jet_distro_flavor "EL")
 
 - !apt
   package: redis
   with:
-    cond: (eq jet_distro_flavor "Debian")
+    condition: (eq jet_distro_flavor "Debian")
 
 - !template
   src: redis.conf.hb

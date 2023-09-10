@@ -22,10 +22,10 @@
   - !echo
     msg: "the motd mentioned chickens"
     with:
-        cond: (eq grep_result.rc 0)
+        condition: (eq grep_result.rc 0)
         
   - !echo
     msg: "the motd did not mention chickens"
     with:
-        cond: (eq grep_result.rc 1) 
+        condition: (eq grep_result.rc 1) 
         
