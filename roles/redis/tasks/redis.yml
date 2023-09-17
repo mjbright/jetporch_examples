@@ -4,18 +4,18 @@
   {}
 
 - !echo
-  msg: "OS distro detected={{ jet_distro_flavor }}"
+  msg: "OS distro detected={{ jet_os_flavor }}"
 
 - !dnf
   package: redis
   with:
-    condition: (eq jet_distro_flavor "EL")
+    condition: (eq jet_os_flavor "EL")
 
 - !apt
   package: redis
   with:
-    condition: (eq jet_distro_flavor "Debian")
-
+    condition: (eq jet_os_flavor "Debian")
+  
 - !template
   src: redis.conf.hb
   dest: /etc/redis/redis.conf

@@ -8,7 +8,7 @@
   #sudo: root 
   
   roles:
-    - { role: redis, vars: { redis_port: 5000 } }
+    - { role: redis, vars: { redis_port: 5000 }, tags: ['redis'] }
 
   tasks:
     
