@@ -1,0 +1,42 @@
+- name: git module demo
+
+  groups:
+    - all
+
+  # sudo: root
+
+  tasks:
+
+    - !facts
+
+    #- !directory
+    #  path: /opt/jeti
+    #  remove: true
+    #  recurse: true
+    
+    #- !directory
+    #  path: /opt/func2
+    #  remove: true
+    #  recurse: true
+
+    - !dnf
+      package: git
+      with:
+          condition: (eq jet_os_flavor "EL")
+
+    - !apt
+      package: git
+      with:
+          condition: (eq jet_os_flavor "Debian")
+    
+    # - !git
+    #  repo: https://github.com/mpdehaan/func.git
+    #  path: /opt/func1
+    #  branch: devel
+
+    - !git
+      repo: git@github.com:mpdehaan/func.git
+      path: /opt/func2
+      branch: master
+
+
