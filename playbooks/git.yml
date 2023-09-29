@@ -29,14 +29,19 @@
       with:
           condition: (eq jet_os_flavor "Debian")
     
-    # - !git
-    #  repo: https://github.com/mpdehaan/func.git
-    #  path: /opt/func1
-    #  branch: devel
-
     - !git
-      repo: git@github.com:mpdehaan/func.git
-      path: /opt/func2
-      branch: master
+      repo: https://github.com/jetporch/jetporch.git
+      path: /opt/jetporch1
+      branch: devel
+
+    # SSH-clone example
+    # change the following to some private repo
+    # you have access to and
+    # invoke CLI with --forward-agent
+
+    # - !git
+    #  repo: git@github.com:mpdehaan/func.git
+    #  path: /opt/func2
+    #  branch: master
 
 
