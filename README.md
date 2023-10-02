@@ -33,7 +33,7 @@ SSH Keys
 If attempting to run over SSH, we'll also need to let Jet know about your SSH keys:
 
 1. run "ssh-agent" to start an ssh-agent session if you don't already have one going
-2. run "ssh-agent add ~/.ssh/id_rsa" or add another SSH key you can use to connect to your systems you defined above
+2. run "ssh-add ~/.ssh/id_rsa" or add another SSH key you can use to connect to your systems you defined above
 
 It's about time to run Jet
 ==========================
