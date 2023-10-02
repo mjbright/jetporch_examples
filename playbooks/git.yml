@@ -32,7 +32,7 @@
     - !git
       repo: https://github.com/jetporch/jetporch.git
       path: /opt/jetporch1
-      branch: devel
+      branch: main
 
     # SSH-clone example
     # change the following to some private repo
